@@ -9,15 +9,16 @@
 	- 加入 label 欄位：相較前一天股票收盤價為高，則為 1
 	- 正規化：讓資料的差異尺度縮小 
 	- 以 n 天作為一個運算單位：以n 天判斷股價漲幅比較有意義 
+	- 將 Volume 欄位去掉 (實驗過後發現這個欄位不太適合拿來當 input column)
 
 2. Which classifier reaches the highest classification accuracy in this dataset? 
 	
 | Classifier                    | Accuracy |
 | ----------------------------- | -------- |
-| Logistic Regression           | 48.41 %  |
+| Logistic Regression           | 52.38 %  |
 | Neural Network - 1 (LSTM)     | 51.63 %  |
 | **Neural Network – 2** (LSTM) | 69.23 %  |
-| Random Forest Classifier      | 47.22 %  |
+| Random Forest Classifier      | 53.17 %  |
 | SVM                           | 52.38 %  |
 
 
@@ -35,5 +36,5 @@
 
 3. How did you improve your classifiers? 
 
-	- 將判斷的`天數拉長`，讓一段時間產生的趨勢可以讓準確率提高。
+	- 將判斷的`天數拉長`，讓一段時間產生的趨勢可以讓準確率提高
 	- 分類問題先求出預測股價再行轉換類別
